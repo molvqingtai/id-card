@@ -1,5 +1,5 @@
 .swiper-container{
-  height: 30vh;
+  height: 40vh;
 }
 
 .swiper-button{
@@ -30,14 +30,27 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  padding-top: 10%;
 }
-
+.swiper-slide__h1{
+  font-size: 20px;
+}
+.swiper-slide__h5{
+  font-size: 14px;
+}
+.swiper-button__text{
+  font-size: 16px;
+}
 .swiper-pagination-bullet{
   background-color: #FFFFFF;
 }
 .swiper-pagination-bullet-active{
   background-color: #FFFFFF;
+}
+.area-title{
+  font-size: 22px;
+}
+.area-list__item{
+  font-size: 16px;
 }
 .intro-item{
   min-height: 300px;
@@ -46,10 +59,13 @@
 }
 
 .intro-item__title{
+  font-size: 22px;
   margin: 30px 0;
   text-align: center;
 }
-
+.intro-item__desc{
+  font-size: 16px;
+}
 .intro-item__text{
   flex: 3;
 }
@@ -60,14 +76,29 @@
   height: 200px;
 }
 
-.question-item__text{
-  font-size: 14px;
-}
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
   .swiper-container{
     height: 40vh;
+  }
+  .swiper-slide__h1{
+    font-size: 22px;
+  }
+  .swiper-slide__h5{
+    font-size: 16px;
+  }
+  .area-title{
+    font-size: 26px;
+  }
+  .area-list__item{
+    font-size: 16px;
+  }
+  .intro-item__title{
+    font-size: 26px;
+  }
+  .intro-item__desc{
+    font-size: 18px;
   }
 }
 
@@ -76,6 +107,23 @@
   .swiper-container{
     height: 50vh;
   }
+  .swiper-slide__h1{
+    font-size: 30px;
+  }
+  .swiper-slide__h5{
+    font-size: 20px;
+  }
+
+  .area-title{
+    font-size: 28px;
+  }
+
+  .intro-item__title{
+    font-size: 28px;
+  }
+  .intro-item__desc{
+    font-size: 20px;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -83,11 +131,32 @@
   .swiper-container{
     height: 60vh;
   }
+  .swiper-slide__h1{
+    font-size: 40px;
+  }
+  .swiper-slide__h5{
+    font-size: 22px;
+  }
+  .area-title{
+    font-size: 40px;
+  }
+  .intro-item__title{
+    font-size: 40px;
+  }
+  .intro-item__desc{
+    font-size: 20px;
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .swiper-container{
     height: 70vh;
+  }
+  .swiper-slide__h1{
+    font-size: 70px;
+  }
+  .swiper-slide__h5{
+    font-size: 24px;
   }
 }

@@ -1,7 +1,45 @@
+.question-item__title{
+  font-size: 20px;
+}
+.question-item__text{
+  font-size: 14px;
+}
+
 .share{
-  font-size: 30px;
+  font-size: 24px;
 }
 .copyright-item{
   flex: 1;
-  font-size: 14px;
+  font-size: 12px;
+}
+
+
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .share{
+    font-size: 30px;
+  }
+  .question-item__title{
+    font-size: 24px;
+  }
+  .copyright-item{
+    font-size: 14px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
 }
