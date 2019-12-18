@@ -1,0 +1,21 @@
+.form-view{
+  position: relative;
+  border: 1px solid rgb(206, 212, 218);
+  background-color: #FCFCFC;
+  border-radius: 3px;
+}
+.form-view::after{
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
+.form-view__image{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  object-fit: contain;
+}
+.form-view__image:not([src]){
+  opacity: 0;
+}
