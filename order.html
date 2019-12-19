@@ -73,8 +73,8 @@
             <div class="col-md-4 mb-3">
               <label for="state">State</label>
               <select class="form-control" id="state" name="state">
-                <option value="Arizona-old">Arizona-old</option>
-                <option value="California">California</option>
+                <option value="测试商品-1">测试商品-1</option>
+                <option value="测试商品-2">测试商品-2</option>
                 <option value="California Old">California Old</option>
                 <option value="Colorado">Colorado</option>
                 <option value="Conneticut">Conneticut</option>
@@ -172,7 +172,7 @@
                 <input type="file" class="custom-file-input" id="picture" name="picture" accept="image/*" required>
                 <label class="custom-file-label" for="picture">Choose image...</label>
               </div>
-              <div class="form-view mt-2"">
+              <div class="form-view mt-2">
                 <img class="form-view__image">
               </div>
             </div>
@@ -196,11 +196,12 @@
             </div>
           </div>
         </form>
-        <div class="cart w-25">
+        <div class="card">
 
         </div>
       </div>
     </main>
+
     <footer class="footer bg-dark py-3 text-white-50">
       <div class="container">
         <div class="share">
@@ -254,22 +255,53 @@
   <script src="node_modules/popper.js/dist/umd/popper.js" charset="utf-8"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.js" charset="utf-8"></script>
   <script src="node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js" charset="utf-8"></script>
-  <script type="text/javascript">
 
+  <script type="text/javascript">
+    // 日历选择器
     $('#date').datepicker({})
 
+    // 图片预览
     $('.custom-file-input').on('change',({target}) => {
       const file = target.files[0]
       $(target).next().text(file.name)
       $(target).parent().next().children().attr('src',URL.createObjectURL(file))
     })
+
+    // 表单提交
     $('.form-submit').on('click',({target})=>{
       if($('.form')[0].checkValidity()){
         $('.form').removeClass('was-validated')
-        console.log('通过');
+        const productList = JSON.parse(sessionStorage.getItem('productList'))
+        const formData = $('.form').serializeArray()
+
+
       }else {
         $('.form').addClass('was-validated')
-        console.log($('.form').serializeArray());
+
+        // 获取商品列表
+        const productList = JSON.parse(sessionStorage.getItem('productList'))
+
+        // 获取表单数据
+        const formData = $('.form').serializeArray().reduce((acc, cur) => {
+          return {...acc,[cur.name]:cur.value  }
+        }, {})
+
+        // 更新购物车
+        const cartList = JSON.parse(sessionStorage.getItem('cartList')||'[]')
+        console.log(cartList);
+        const newCartList = [...cartList,formData].map((item,index)=>({...item,id:index}))
+        sessionStorage.setItem('cartList',JSON.stringify(newCartList))
+
+        const [product] = productList.filter(item => item.name === formData.state)
+        // productList.reduce((acc, cur) => {
+        //   cur.name ===
+        //   return acc =
+        // }, formData.)
+        // const total =
+        console.log(formData);
+        console.log(productList);
+        console.log(sessionStorage.getItem('cartList'));
+
       }
     })
 

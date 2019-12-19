@@ -75,8 +75,8 @@
                   <a href="#"><img src="./images/card.jpg" class="card-media__image card-img-top" alt=""></a>
               </div>
               <div class="card-body">
-                <h5 class="card-title" data-name="Card title">
-                  <a href="#" class="card-title__text text-decoration-none">Card title</a>
+                <h5 class="card-title" data-name="测试商品-1">
+                  <a href="#" class="card-title__text text-decoration-none">测试商品-1</a>
                 </h5>
                 <p class="card-text">
                   Some quick example text to build on the card title and make up the bulk of the card's content.
@@ -94,6 +94,35 @@
                 <li class="list-group-item d-flex justify-content-between" data-person="2" data-price="40">
                   <span>4 or more persons each</span>
                   <span class="text-warning">$40</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-12 py-3">
+            <div class="card">
+              <div class="card-media">
+                  <a href="#"><img src="./images/card.jpg" class="card-media__image card-img-top" alt=""></a>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title" data-name="测试商品-2">
+                  <a href="#" class="card-title__text text-decoration-none">测试商品-2</a>
+                </h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up the bulk of the card's content.
+                </p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between" data-person="1" data-price="70">
+                  <span>1 person</span>
+                  <span class="text-warning">$150</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between" data-person="2" data-price="60">
+                  <span>2 or more persons each</span>
+                  <span class="text-warning">$100</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between" data-person="2" data-price="40">
+                  <span>4 or more persons each</span>
+                  <span class="text-warning">$50</span>
                 </li>
               </ul>
             </div>
@@ -156,35 +185,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-12 py-3">
-            <div class="card">
-              <div class="card-media">
-                  <a href="#"><img src="./images/card.jpg" class="card-media__image card-img-top" alt=""></a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title" data-name="Card title">
-                  <a href="#" class="card-title__text text-decoration-none">Card title</a>
-                </h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the card's content.
-                </p>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item d-flex justify-content-between" data-person="1" data-price="70">
-                  <span>1 person</span>
-                  <span class="text-warning">$70</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between" data-person="2" data-price="60">
-                  <span>2 or more persons each</span>
-                  <span class="text-warning">$60</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between" data-person="2" data-price="40">
-                  <span>4 or more persons each</span>
-                  <span class="text-warning">$40</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+
           <div class="col-lg-3 col-md-6 col-12 py-3">
             <div class="card">
               <div class="card-media">
@@ -358,7 +359,8 @@
   <script src="node_modules/popper.js/dist/umd/popper.js" charset="utf-8"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.js" charset="utf-8"></script>
   <script type="text/javascript">
-    sessionStorage.set('productList',JSON.stringify([...$('.card')].map((item)=>{
+    // 保存商品列表
+    sessionStorage.setItem('productList',JSON.stringify([...$('.card')].map((item)=>{
       return {
         name:$(item).find('.card-title').data('name'),
         group:[...$(item).find('.list-group-item')].map((item=>{
