@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <title>Cart</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/cart.css">
+  </head>
+  <body class="min-vh-100 d-flex flex-column">
+    <header class="container-fluid bg-dark px-sm-5 px-0 sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">LOGO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="container">
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav flex-fill justify-content-between text-nowrap">
+              <li class="nav-item active">
+                <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./prices.html">Prices</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./order.html">Order</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./material.html">Material</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./payments.html">Payments</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./reseller.html">Reseller</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./faq.html">FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./about-us.html">About US</a>
+              </li>
+              <li class="nav-item d-flex justify-content-around d-lg-none">
+                <a class="nav-link px-5" href="#">
+                  <i class="fas fa-heart"></i>
+                </a>
+                <a class="nav-link px-5" href="#">
+                  <i class="fas fa-shopping-bag"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="d-lg-flex justify-content-end ml-3 text-nowrap d-none">
+          <a href="#" class="text-light mr-4">
+            <i class="fas fa-heart"></i>
+          </a>
+          <a href="#" class="text-light">
+            <i class="fas fa-shopping-bag"></i>
+          </a>
+      </div>
+      </nav>
+    </header>
+    <main class="flex-fill">
+      <div class="container py-5 d-flex flex-column flex-lg-row">
+        <table class="table table-bordered mr-0 mr-sm-5">
+          <thead>
+            <tr>
+              <th>State</th>
+              <th>First name</th>
+              <th>Middle name</th>
+              <th>Last name</th>
+              <th>Price</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody class="table-tbody">
+            <!-- <tr>
+              <td>1111</td>
+              <td>1111</td>
+              <td>1111</td>
+              <td>1111</td>
+              <td>1111</td>
+              <td><button type="button" class="btn btn-warning btn-sm text-light">Remove</button></td>
+            </tr> -->
+          </tbody>
+        </table>
+        <div class="total d-flex flex-fill flex-column align-items-center">
+          <h3 class="total-title mb-3 text-nowrap">
+            TOTAL: $<number class="total-title__price">0</number>
+          </h3>
+          <a href="#" class="total-link bg-danger text-white py-2 px-4 rounded-lg text-nowrap">
+            <i class="fas fa-shopping-cart"></i> View cart (<number class="total-title__number">0</number>)
+          </a>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="footer bg-dark py-3 text-white-50">
+      <div class="container">
+        <div class="share">
+          <div class="share-item d-flex justify-content-sm-start justify-content-between">
+            <a href="#" class="text-white-50 mr-sm-3">
+              <i class="fab fa-snapchat"></i>
+            </a>
+            <a href="#" class="text-white-50 mr-sm-3">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="#" class="text-white-50 mr-sm-3">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="text-white-50 mr-sm-3">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="#" class="text-white-50 mr-sm-3">
+              <i class="fab fa-pinterest"></i>
+            </a>
+            <a href="#" class="text-white-50 mr-sm-3">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="text-white-50 mr-sm-3">
+              <i class="fab fa-tumblr"></i>
+            </a>
+          </div>
+        </div>
+        <div class="question d-flex flex-sm-row flex-column justify-content-between">
+          <div class="question-item py-3">
+            <h4 class="question-item__title">WHAT WE DO</h4>
+            <p class="question-item__text">We offer high quality IDs at an affordable price. Every ID comes with a free duplicate and tracking number. All IDs are programmed to be scanned and to pass the backlight test. And....we do more then that! We offer you the chance to have a great time with your friends!</p>
+          </div>
+          <div class="question-item mx-sm-5 py-3">
+            <h4 class="question-item__title">HOW WE DO IT</h4>
+            <p class="question-item__text">Provide us with a digital photo of yourself up against any colour wall or backdrop. Wear dark clothing for contrast covering skin and keep your hair nice and neat.That is all you need to worry about! Let us do our job in order for you to taste some freedom!</p>
+          </div>
+          <div class="question-item py-3">
+            <h4 class="question-item__title">HOW TO PAY</h4>
+            <p class="question-item__text">We offer you secure and anonymous payment methods. Also, your information are safe with us! If you want an ID you can get it by paying via Western Union or BitCoin Litecoin . For special offers check our Products page.</p>
+          </div>
+        </div>
+        <div class="copyright d-flex flex-sm-row flex-column justify-content-sm-between border-top border-light pt-3">
+          <div class="copyright-item text-sm-left text-center"><a href="#" class="text-reset">WHOLESALE AT IDDSBUDDY</a></div>
+          <div class="copyright-item text-center"><a href="#" class="text-reset">JOIN IDSBUDDY DISTRIBUTORS</a></div>
+          <div class="copyright-item text-sm-right text-center"><a href="#" class="text-reset">© Copyright Fake IDs iddsbuddy</a></div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="node_modules/jquery/dist/jquery.slim.js" charset="utf-8"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.js" charset="utf-8"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.js" charset="utf-8"></script>
+  <script type="text/javascript">
+
+    const cartList = JSON.parse(sessionStorage.getItem('cartList')||'[]')
+
+    // 更新合计
+    const updateTotal = () =>{
+      $('.total-title__price').text(cartList.reduce((acc, cur) => cur.price + acc,0))
+      $('.total-title__number').text(cartList.length)
+    }
+    updateTotal()
+
+    // 更新购物车列表
+    const updateCart =() =>{
+      $('.table-tbody').html(cartList.reduce((acc,cur)=>{
+        const td = `<td>${cur['state']}</td>
+                    <td>${cur['first-name']}</td>
+                    <td>${cur['middle-name']}</td>
+                    <td>${cur['last-name']}</td>
+                    <td>$${cur['price']}</td>
+                    <td><button type="button" class="btn btn-warning btn-sm text-light table-button">Remove</button></td>
+                    `
+        return `${acc}<tr>${td}</tr>`
+      },[]))
+    }
+    updateCart()
+
+    // 删除数据
+    $('body').on('click','.table-button',function(){
+        const row = $(this).parent().parent()
+        cartList.splice(row.index(),1)
+        sessionStorage.setItem('cartList',JSON.stringify(cartList))
+        row.remove()
+        updateTotal()
+    })
+
+  </script>
+</html>

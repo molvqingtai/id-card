@@ -67,8 +67,8 @@
     </header>
 
     <main class="flex-fill">
-      <div class="container py-5 d-flex">
-        <form class="form w-75 novalidate">
+      <div class="container py-5 d-flex flex-column flex-lg-row">
+        <form class="form novalidate">
           <div class="form-row">
             <div class="col-md-4 mb-3">
               <label for="state">State</label>
@@ -187,7 +187,7 @@
               </div>
             </div>
           </div>
-          <div class="form-row">
+          <div class="form-row d-flex flex-nowrap flex-sm-wrap">
             <div class="col-md-6 d-flex justify-content-center">
               <button type="button" class="btn btn-success form-submit form-submit-add text-light">ADD and add another</button>
             </div>
@@ -196,8 +196,13 @@
             </div>
           </div>
         </form>
-        <div class="card">
-
+        <div class="total d-flex flex-fill flex-column align-items-center pt-5">
+          <h3 class="total-title mb-3 text-nowrap">
+            TOTAL: $<number class="total-title__price">0</number>
+          </h3>
+          <a href="./cart.html" class="total-link bg-danger text-white py-2 px-4 rounded-lg text-nowrap">
+            <i class="fas fa-shopping-cart"></i> View cart (<number class="total-title__number">0</number>)
+          </a>
         </div>
       </div>
     </main>
@@ -250,6 +255,12 @@
         </div>
       </div>
     </footer>
+    <div class="loading loading--hidden">
+      <div class="spinner-border text-light" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <span class="text-light mt-3">Adding please wait.</span>
+    </div>
   </body>
   <script src="node_modules/jquery/dist/jquery.slim.js" charset="utf-8"></script>
   <script src="node_modules/popper.js/dist/umd/popper.js" charset="utf-8"></script>
@@ -260,6 +271,7 @@
     // 日历选择器
     $('#date').datepicker({})
 
+    $('.toast').toast()
     // 图片预览
     $('.custom-file-input').on('change',({target}) => {
       const file = target.files[0]
@@ -267,41 +279,42 @@
       $(target).parent().next().children().attr('src',URL.createObjectURL(file))
     })
 
+
+    // 更新合计
+    const updateTotal = () =>{
+      const cartList = JSON.parse(sessionStorage.getItem('cartList')||'[]')
+      $('.total-title__price').text(cartList.reduce((acc, cur) => cur.price + acc,0))
+      $('.total-title__number').text(cartList.length)
+    }
+    updateTotal()
+
     // 表单提交
     $('.form-submit').on('click',({target})=>{
       if($('.form')[0].checkValidity()){
         $('.form').removeClass('was-validated')
-        const productList = JSON.parse(sessionStorage.getItem('productList'))
-        const formData = $('.form').serializeArray()
-
-
-      }else {
-        $('.form').addClass('was-validated')
-
-        // 获取商品列表
-        const productList = JSON.parse(sessionStorage.getItem('productList'))
 
         // 获取表单数据
         const formData = $('.form').serializeArray().reduce((acc, cur) => {
           return {...acc,[cur.name]:cur.value  }
         }, {})
 
-        // 更新购物车
+        // 获取商品列表
+        const productList = JSON.parse(sessionStorage.getItem('productList')||'[]')
+
+        // 获取购物车列表
         const cartList = JSON.parse(sessionStorage.getItem('cartList')||'[]')
-        console.log(cartList);
-        const newCartList = [...cartList,formData].map((item,index)=>({...item,id:index}))
+
+        // 更新购物车列表
+        const newCartList = [...cartList,formData].map((item,index,array)=>{
+          const person = array.filter(jtem => jtem.state === item.state).length
+          const price = productList.reduce((acc, cur) => cur.name === item.state?cur.group:acc,[]).reduce((acc, cur) => person >= cur.person ?cur.price:acc, 0)
+          return {...item, price, id:index}
+        })
         sessionStorage.setItem('cartList',JSON.stringify(newCartList))
-
-        const [product] = productList.filter(item => item.name === formData.state)
-        // productList.reduce((acc, cur) => {
-        //   cur.name ===
-        //   return acc =
-        // }, formData.)
-        // const total =
-        console.log(formData);
-        console.log(productList);
-        console.log(sessionStorage.getItem('cartList'));
-
+        $('.loading').removeClass('loading--hidden')
+        setTimeout(()=>$(target).hasClass('form-submit-add')?location.reload():location.href='cart.html',1000)
+      }else {
+        $('.form').addClass('was-validated')
       }
     })
 
