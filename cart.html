@@ -130,8 +130,8 @@
             </div>
             <div class="form-row">
               <div class="col mb-3">
-                <label for="zip">Payment</label>
-                <select class="form-control" id="hair" name="hair">
+                <label for="payment">Payment</label>
+                <select class="form-control" id="payment" name="payment">
                   <option selected="selected" value="Bitcoin">Bitcoin - If you pay with bitcoin, you will be offered a 20% discount. </option>
               	  <option value="Western Union">Western Union</option>
                 </select>
@@ -139,7 +139,7 @@
             </div>
             <div class="form-row d-flex flex-nowrap flex-sm-wrap my-5">
               <div class="col d-flex justify-content-center">
-                <button type="button" class="btn btn-success form-submit form-submit-finish text-light">Finish order</button>
+                <button type="submit" class="btn btn-success form-submit form-submit-finish text-light">Finish order</button>
               </div>
             </div>
           </form>
@@ -201,7 +201,7 @@
         <div class="copyright d-flex flex-sm-row flex-column justify-content-sm-between border-top border-light pt-3">
           <div class="copyright-item text-sm-left text-center"><a href="#" class="text-reset">WHOLESALE AT IDDSBUDDY</a></div>
           <div class="copyright-item text-center"><a href="#" class="text-reset">JOIN IDSBUDDY DISTRIBUTORS</a></div>
-          <div class="copyright-item text-sm-right text-center"><a href="#" class="text-reset">© Copyright Fake IDs iddsbuddy</a></div>
+          <div class="copyright-item text-sm-right text-center"><a href="#" class="text-reset">© Copyright Fake IDs iddsbuddy</a><img src="https://icon.cnzz.com/img/pic.gif"></div>
         </div>
       </div>
     </footer>
@@ -244,5 +244,20 @@
         updateTotal()
     })
 
+    // 表单提交
+    $('.form-submit').on('click',(e)=>{
+
+      if($('.form')[0].checkValidity()){
+        console.log(1);
+        $('.form').removeClass('was-validated')
+        e.preventDefault();
+        e.stopPropagation();
+      }else {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log(2);
+        $('.form').addClass('was-validated')
+      }
+    })
   </script>
 </html>
