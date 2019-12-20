@@ -246,16 +246,12 @@
 
     // 表单提交
     $('.form-submit').on('click',(e)=>{
-
       if($('.form')[0].checkValidity()){
-        console.log(1);
         $('.form').removeClass('was-validated')
-        e.preventDefault();
-        e.stopPropagation();
+        alert('Submitted successfully!')
       }else {
         e.preventDefault();
         e.stopPropagation();
-        console.log(2);
         $('.form').addClass('was-validated')
       }
     })
