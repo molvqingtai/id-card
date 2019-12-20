@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-    <title>Cart</title>
+    <title>FAQ</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/fontawesome.css">
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/cart.css">
   </head>
+
   <body class="min-vh-100 d-flex flex-column">
     <header class="container-fluid bg-dark px-sm-5 px-0 sticky-top">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -64,99 +64,54 @@
       </div>
       </nav>
     </header>
-    <main class="flex-fill">
-      <div class="container py-5 d-flex flex-column flex-lg-row">
-        <div class="">
-          <table class="table table-bordered mr-0 mr-sm-5 mb-5">
-            <thead>
-              <tr>
-                <th>State</th>
-                <th>First name</th>
-                <th>Middle name</th>
-                <th>Last name</th>
-                <th>Price</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody class="table-tbody">
-              <!-- <tr>
-                <td>1111</td>
-                <td>1111</td>
-                <td>1111</td>
-                <td>1111</td>
-                <td>1111</td>
-                <td><button type="button" class="btn btn-warning btn-sm text-light">Remove</button></td>
-              </tr> -->
-            </tbody>
-          </table>
-          <div class="d-flex justify-content-between align-items-end">
-            <h3 class="m-0">Shipping details</h3><p class="m-0">Shipping cost: <b>$23.0</b></p>
+    <main class="flex-fill container py-5">
+      <h4>Ready answers to your questions</h4>
+      <div class="accordion py-3" id="accordionExample">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <button class="btn btn-link text-dark" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Collapsible Group Item #1
+              </button>
+            </h2>
           </div>
-          <p class="py-3">Delivery expense description: $20 for one order. For each additional people, there will be an extra charge of one dollar.</p>
-          <form class="form novalidate">
-            <div class="form-row">
-              <div class="col-md-6 mb-3">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" name="name" required>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" name="email" required>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="col-md-3 mb-3">
-                <label class="text-justify" for="city" >City</label>
-                <input type="text" class="form-control" id="city" name="city" required>
-              </div>
-              <div class="col-md-3 mb-3">
-                <label for="state">State</label>
-                <input type="text" class="form-control" id="state" name="state" required>
-              </div>
-              <div class="col-md-3 mb-3">
-                <label for="country">Country</label>
-                <input type="text" class="form-control" id="country" name="country" required>
-              </div>
-              <div class="col-md-3 mb-3">
-                <label for="zip">Zip</label>
-                <input type="text" class="form-control" id="zip" name="zip" required>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="col mb-3">
-                <label for="address">Address</label>
-                <textarea class="form-control" id="address" name="address" required></textarea>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="col mb-3">
-                <label for="zip">Payment</label>
-                <select class="form-control" id="hair" name="hair">
-                  <option selected="selected" value="Bitcoin">Bitcoin - If you pay with bitcoin, you will be offered a 20% discount. </option>
-              	  <option value="Western Union">Western Union</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-row d-flex flex-nowrap flex-sm-wrap my-5">
-              <div class="col d-flex justify-content-center">
-                <button type="button" class="btn btn-success form-submit form-submit-finish text-light">Finish order</button>
-              </div>
-            </div>
-          </form>
-        </div>
 
-        <div class="total d-flex flex-fill flex-column align-items-center">
-          <h3 class="total-title mb-3 text-nowrap d-flex">
-            TOTAL: $<number class="total-title__price">0</number>
-          </h3>
-          <a href="#" class="total-link bg-danger text-white py-2 px-4 rounded-lg text-nowrap">
-            <i class="fas fa-shopping-cart"></i> View cart (<number class="total-title__number">0</number>)
-          </a>
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed text-dark" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Collapsible Group Item #2
+              </button>
+            </h2>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed text-dark" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Collapsible Group Item #3
+              </button>
+            </h2>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
         </div>
       </div>
-
     </main>
-
     <footer class="footer bg-dark py-3 text-white-50">
       <div class="container">
         <div class="share">
@@ -210,39 +165,6 @@
   <script src="js/popper.js" charset="utf-8"></script>
   <script src="js/bootstrap.js" charset="utf-8"></script>
   <script type="text/javascript">
-
-    const cartList = JSON.parse(sessionStorage.getItem('cartList')||'[]')
-
-    // 更新合计
-    const updateTotal = () =>{
-      $('.total-title__price').text(cartList.reduce((acc, cur) => cur.price + acc,0))
-      $('.total-title__number').text(cartList.length)
-    }
-    updateTotal()
-
-    // 更新购物车列表
-    const updateCart =() =>{
-      $('.table-tbody').html(cartList.reduce((acc,cur)=>{
-        const td = `<td>${cur['state']}</td>
-                    <td>${cur['first-name']}</td>
-                    <td>${cur['middle-name']}</td>
-                    <td>${cur['last-name']}</td>
-                    <td>$${cur['price']}</td>
-                    <td><button type="button" class="btn btn-warning btn-sm text-light table-button">Remove</button></td>
-                    `
-        return `${acc}<tr>${td}</tr>`
-      },[]))
-    }
-    updateCart()
-
-    // 删除数据
-    $('body').on('click','.table-button',function(){
-        const row = $(this).parent().parent()
-        cartList.splice(row.index(),1)
-        sessionStorage.setItem('cartList',JSON.stringify(cartList))
-        row.remove()
-        updateTotal()
-    })
-
+    $('.collapse').collapse()
   </script>
 </html>
